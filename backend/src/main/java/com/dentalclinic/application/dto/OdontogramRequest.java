@@ -1,0 +1,22 @@
+package com.dentalclinic.application.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.UUID;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class OdontogramRequest {
+    @NotNull(message = "EHR ID is mandatory")
+    private UUID ehrId;
+
+    @NotBlank(message = "Diagram data is mandatory")
+    private String diagram;
+}
